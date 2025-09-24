@@ -1,0 +1,29 @@
+/* Tailwind v4 directives live in a plain CSS file */
+@import "tailwindcss";
+
+/* Tell Tailwind where your templates live for tree-shaking */
+@source "./**/*.{html,js,ts}";
+
+/* Bring in your compiled SCSS output AFTER Tailwind */
+@import "./styles.css";
+
+/* Optional: theme tokens (v4) */
+@theme {
+  --color-brand: #1ab69d;
+}
+
+.form-input{
+  @apply p-2 w-full border-b border-gray-300 focus:outline-none focus:border-[#6E57E2] placeholder-gray-500;
+}
+
+.btn-primary-gradient{
+  @apply cursor-pointer text-white font-semibold py-3 px-6 rounded-full bg-gradient-to-r from-[#42D5E2] to-[#6E57E2] hover:from-[#3cbcd7] hover:to-[#5a46c0] transition;
+}
+
+.bg-gradient{
+  @apply bg-gradient-to-r from-[#42D5E2] to-[#6E57E2];
+}
+
+.text-gradient{
+  @apply bg-gradient-to-r from-[#42D5E2] to-[#6E57E2] bg-clip-text text-transparent;
+}

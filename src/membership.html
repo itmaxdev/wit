@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+  <title>Women In IT</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="../dist/styles.css" />
+</head>
+<body class="min-h-screen">
+    <header class="sticky top-[10px] z-[1000] mt-2" x-data="{ open: false }">
+        <div class="container mx-auto px-5">
+        <div class="flex items-center gap-10 bg-white p-5 rounded-3xl shadow">
+            <div>
+            <img src="./images/icons/Group%2018455.svg" alt="WIT Logo" class="w-[60px] md:w-[78px]" />
+            </div>
+            <div class="hidden lg:flex items-center gap-x-10 text-base grow" id="navLinks">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About Us</a>
+            <a href="#programs" class="nav-link">Our Programs</a>
+            <a href="#activity" class="nav-link">Our Activities</a>
+            <a href="#community" class="nav-link">Community Voice</a>
+            <a href="#membership" class="nav-link">Membership</a>
+            </div>
+            <div class="hidden xl:flex items-center gap-2" id="buttonContainer">
+            <button class="btn-primary btn-outline">Join Our Community</button>
+            <button class="btn-primary btn-outline !font-[400]" id="donateBtn">Donate Now</button>
+            </div>
+            <div class="lg:hidden grow text-end">
+            <button @click="open = !open" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars text-3xl"></i>
+            </button>
+            </div>
+        </div>
+        </div>
+
+        <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="transform translate-x-full"
+                x-transition:enter-end="transform translate-x-0"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="transform translate-x-0"
+                x-transition:leave-end="transform translate-x-full"
+                class="fixed top-0 right-0 h-screen w-64 bg-white shadow-lg p-6 z-30 lg:hidden"
+                style="display: none;"
+        >
+        <button
+                @click="open = false"
+                class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-700">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <nav class="flex flex-col h-full text-gray-700 font-medium">
+            <div class="grow flex flex-col space-y-6 mt-10">
+            <a href="#home" @click="open = false" class="hover:underline">Home</a>
+            <a href="#about" @click="open = false" class="hover:underline">About Us</a>
+            <a href="#activity" @click="open = false" class="hover:underline">Activity</a>
+            <a href="#programs" @click="open = false" class="hover:underline">Our Programs</a>
+            <a href="#community" @click="open = false" class="hover:underline">Community Voice</a>
+            <a href="#membership" @click="open = false" class="hover:underline">Membership</a>
+            </div>
+            <div id="buttonContainers" class="flex flex-col space-y-3">
+            <button class="btn-primary btn-outline !w-full">Join Our Community</button>
+            <button class="btn-primary btn-outline !w-full">Donate Now</button>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+
+    <section id="membership" class="py-10 md:py-20 bg-white">
+        <div class="container px-5 mx-auto">
+        <div class=" mx-auto grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+            <div class="text-center md:text-left">
+            <p class="text-sm text-dark mb-3">Membership</p>
+            <h2 class="grow text-dark font-semibold text-4xl md:text-6xl mb-4">
+                Be The Change <span class="md:block"></span>and Enroll
+            </h2>
+            </div>
+            <div class="flex flex-col gap-6">
+            <div class="border border-gray-300 rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+                <h3 class="text-xl sm:text-2xl font-semibold text-[#242424] mb-4 text-center md:text-left">Students</h3>
+                <div class="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-4">
+                <ul class="text-sm text-[#333] list-disc pl-5 leading-relaxed">
+                    <li>Be over twenty years of age.</li>
+                    <li>Enjoy full civil rights and not have been convicted of a felony or a crime involving moral turpitude.</li>
+                    <li>Accept the association’s bylaws and commit to fulfilling its objectives.</li>
+                    <li>Hold at least 5 years of work in an academic, professional, or applied capacity in the field of information technology or other relevant technical fields.</li>
+                </ul>
+                <div class="flex flex-col items-center md:items-start gap-3">
+                    <span class="text-3xl sm:text-4xl font-semibold text-[#242424]">Free</span>
+                    <button class="btn-primary btn-outline !px-10">
+                        Apply
+                    </button>
+                </div>
+                </div>
+            </div>
+            <div class="rounded-2xl p-6 sm:p-8 bg-[#F5F5F5] shadow-sm hover:shadow-md transition flex flex-col gap-4">
+                <h3 class="text-xl sm:text-2xl font-semibold text-[#242424] mb-4 text-center md:text-left">Professional Members</h3>
+                <div class="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-4">
+                <ul class="text-sm text-[#333] list-disc pl-5 leading-relaxed">
+                    <li>Be over twenty years of age.</li>
+                    <li>Enjoy full civil rights and not have been convicted of a felony or a crime involving moral turpitude.</li>
+                    <li>Accept the association’s bylaws and commit to fulfilling its objectives.</li>
+                    <li>Hold at least 5 years of work in an academic, professional, or applied capacity in the field of information technology or other relevant technical fields.</li>
+                </ul>
+                <div class="flex flex-col items-center md:items-start gap-3">
+                    <span class="text-3xl sm:text-4xl font-bold text-[#242424]">$100 <span class="text-sm font-normal">/year</span></span>
+                    <button class="btn-primary btn-outline !px-10">
+                        Apply
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div id="membershipModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center px-4 py-6 sm:py-12 overflow-auto">
+        <div class="bg-white w-full max-w-md sm:max-w-xl rounded-2xl shadow-xl p-6 sm:p-8 relative mx-auto">
+            <button onclick="closeModals()"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl sm:text-4xl">
+            &times;
+            </button>
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 text-center sm:text-left">Apply for membership</h2>
+            <p class="text-sm text-gray-600 mb-6 text-center sm:text-left">
+            To apply, the applicant must clearly state their desire to join the association and attach the registration form,
+            a copy of their civil status record, and any documents proving their qualifications. The administrative board
+            will review the application and issue a decision. The decision is final and not subject to appeal.
+            </p>
+            <form class="space-y-6">
+            <div>
+                <input type="file" id="fileInput" accept=".pdf,.doc,.docx" class="hidden" />
+                <label for="fileInput" class="flex items-center gap-2 cursor-pointer text-gray-700 border-b border-gray-300 pb-2 w-full">
+                <img src="/images/paperclip.png" alt="Attach" class="w-5 h-5" />
+                <span class="text-sm">Upload Registration Form*</span>
+                </label>
+                <p class="text-xs text-gray-400">PDF or DOC format, max 2 MB.</p>
+            </div>
+            <div>
+                <input type="file" id="fileInputs" accept=".pdf,.doc,.docx" class="hidden" />
+                <label for="fileInputs" class="flex items-center gap-2 cursor-pointer text-gray-700 border-b border-gray-300 pb-2 w-full">
+                <img src="/images/paperclip.png" alt="Attach" class="w-5 h-5" />
+                <span class="text-sm">Upload a Copy of Civil Status Record</span>
+                </label>
+                <p class="text-xs text-gray-400">PDF or DOC format, max 2 MB.</p>
+            </div>
+            <div>
+                <input type="file" id="fileInputes" accept=".pdf,.doc,.docx" class="hidden" />
+                <label for="fileInputes" class="flex items-center gap-2 cursor-pointer text-gray-700 border-b border-gray-300 pb-2 w-full">
+                <img src="/images/paperclip.png" alt="Attach" class="w-5 h-5" />
+                <span class="text-sm">Upload any documents proving your Qualifications*</span>
+                </label>
+                <p class="text-xs text-gray-400">PDF or DOC format, max 2 MB.</p>
+            </div>
+            <div class="space-y-2 text-sm text-gray-700">
+                <label class="block font-bold">My interests:</label>
+                <label class="flex items-center space-x-2">
+                <input type="checkbox" />
+                <span>Be part of WIT network</span>
+                </label>
+                <label class="flex items-center space-x-2">
+                <input type="checkbox" />
+                <span>Become a mentor</span>
+                </label>
+                <label class="flex items-start space-x-2">
+                <input type="checkbox" />
+                <span>I have read and agree to the <a href="#" class="text-[#6E57E2] underline font-bold">Bylaws</a>, and I certify that I have a clean legal record.</span>
+                </label>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="w-full sm:w-auto bg-[#6E57E2] hover:bg-[#5a46c0] text-white font-semibold py-3 rounded-full text-sm px-8">
+                Submit
+                </button>
+            </div>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <footer class="bg-white">
+        <div class="container px-5 mx-auto">
+        <div class="min-h-[450px] md:min-h-[350px] lg:min-h-[400px] bg-cover rounded-[20px] text-white p-10" style="background-image: url('images/footer/Footer (1).png');">
+            <div class="grid grid-cols-1 md:grid-cols-12 items-center min-h-[450px] md:min-h-[350px] lg:min-h-[400px] gap-5">
+            <div class="md:col-span-8">
+                <img src="images/footer/Group%2018455.png" alt="WIT Logo" class="mb-10" />
+                <h2 class="text-white font-normal text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl">
+                18 Years of Legacy,<span class="md:block"></span> A Future of Opportunity
+                </h2>
+            </div>
+            <div class="md:col-span-4">
+                <h3 class="font-bold mb-6">Company</h3>
+                <ul class="space-y-1">
+                <li><a href="#home" class="hover:underline">Home</a></li>
+                <li><a href="#about" class="hover:underline">About Us</a></li>
+                <li><a href="#activity" class="hover:underline">Our Activities</a></li>
+                <li><a href="#community" class="hover:underline">Community Voice</a></li>
+                <li><a href="#membership" class="hover:underline">Membership</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="px-5 md:px-10 -mt-8">
+            <div class="p-5 bg-white rounded-xl shadow">
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="text-[#33333] text-center md:text-start">&copy; <span class="underline">WIT</span> 2025. All rights reserved.</div>
+                <div class="flex items-center justify-center space-x-6 text-lg">
+                <a href="#" aria-label="Facebook" class="text-[#44358B]"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram" class="text-[#44358B]"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="X Twitter" class="text-[#44358B]"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn" class="text-[#44358B]"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="flex space-x-6 justify-center md:justify-end">
+                <a href="#" class="underline text-[#33333] hover:text-[#44358B] text-xs">Terms of use</a>
+                <a href="#" class="underline text-[#33333] hover:text-[#44358B] text-xs">Privacy Policy</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        </div>
+    </footer>
+</body>
+</html>

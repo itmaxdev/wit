@@ -1,0 +1,20 @@
+{
+  "name": "womeninit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass src/styles.scss:src/styles.css --watch & npx tailwindcss -i src/tailwind.css -o dist/styles.css -w",
+    "build": "npx tailwindcss -i src/tailwind.css -o dist/tailwind-final.css --content ./**/*.php"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "sass": "^1.92.0",
+    "tailwindcss": "^4.1.12"
+  }
+}
