@@ -20,4 +20,4 @@ npm run dev
 
 ## Note
 
-For custom styling, write you styles only in file src/style.scss
+For custom styling, write your styles only in file src/style.scss
