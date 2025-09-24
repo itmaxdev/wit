@@ -17,3 +17,7 @@ Start the scss & tailwind compilation
 # npm
 npm run dev
 ```
+
+## Note
+
+For custom styling, write you styles only in file src/style.scss
