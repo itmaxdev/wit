@@ -368,7 +368,7 @@
     </div>
   </section>
   <section id="activity" class="pb-10  bg-white">
-    <section class="container px-5 mx-auto relative w-full h-[150px] md:h-[260px] lg:h-[260px] 2xl:h-[320px] overflow-hidden bg-white">
+    <section class=" relative w-full h-[150px] md:h-[260px] lg:h-[260px] 2xl:h-[320px] overflow-hidden bg-white">
       <!-- First Scrolling Text -->
       <div class="absolute left-0 w-full transform rotate-[1deg]">
         <div class="bg-[#04c4d4] text-white h-[30px] text-3xl md:h-[80px] md:text-5xl lg:h-[100px] lg:text-7xl 2xl:h-[145px] 2xl:text-8xl flex items-center overflow-hidden">
@@ -1144,6 +1144,27 @@
                   btnText.textContent = "Join Us";
                   loader.classList.add("hidden");
               }
+          });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+          // Select both "Join Our Community" button and footer membership link
+          const joinLinks = document.querySelectorAll('a[href="#membership"], button[onclick="scrollToJoinSection()"]');
+
+          joinLinks.forEach(link => {
+              link.addEventListener("click", function (e) {
+                  e.preventDefault();
+
+                  const section = document.getElementById("join-community");
+                  if (section) {
+                      section.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+
+                  document.querySelectorAll(".nav-link").forEach(nav => {
+                      nav.classList.remove("active", "bg-[#F0F2F4]", "font-semibold");
+                  });
+
+                  history.replaceState(null, null, " ");
+              });
           });
       });
 
