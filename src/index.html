@@ -366,6 +366,8 @@
         </div>
       </div>
     </div>
+  </section>
+  <section id="activity" class="pb-10  bg-white">
     <section class="container px-5 mx-auto relative w-full h-[150px] md:h-[260px] lg:h-[260px] 2xl:h-[320px] overflow-hidden bg-white">
       <!-- First Scrolling Text -->
       <div class="absolute left-0 w-full transform rotate-[1deg]">
@@ -391,8 +393,6 @@
         </div>
       </div>
     </section>
-  </section>
-  <section id="activity" class="py-10 md:py-20 bg-white">
     <div class="container px-5 mx-auto">
       <p class="text-dark mb-2 font-medium text-[16px]">Encouraging gender-sensitive AI development</p>
 
@@ -574,7 +574,6 @@
       </div>
     </div>
 
-     
   </section>
   <section id="community" class=" bg-white">
     <div class="container px-5 mx-auto">
@@ -607,7 +606,7 @@
 
     </div>
   </section>
-<section class="container px-5 mx-aut mt-10">
+<section class="container px-5 mx-aut">
   <div id="join-community" class="relative bg-no-repeat bg-start p-5 pt-[4rem] md:pt-[8rem]" style="background-image: url('./images/Sections/Section (10).png');">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
@@ -883,8 +882,10 @@
                           prevEl: ".community-swiper-button-prev",
                       },
                       breakpoints: {
-                          768: { slidesPerView: 2.5 },
-                          1024: { slidesPerView: 2.5 },
+                          640: { slidesPerView: 1 },
+                          768: { slidesPerView: 2 },
+                          1024: { slidesPerView: 2.6 },
+                          1440: { slidesPerView: 2.6 },
                       },
                       loop: false,
                       watchOverflow: true,
@@ -924,7 +925,7 @@
 
               data.forEach((program) => {
                   const slide = document.createElement("div");
-                  slide.className = "relative swiper-slide rounded-3xl bg-white p-5 group h-[596px]";
+                  slide.className = "relative swiper-slide rounded-3xl bg-white p-5 group h-[596px] overflow-hidden";
 
                   let tagsHTML = "";
                   if (program.tags && program.tags.length > 0) {
@@ -937,21 +938,32 @@
                   }
 
                   slide.innerHTML = `
-        <img src="${program.image || "https://via.placeholder.com/600x381"}"
-             alt="${program.name}"
-             class="w-full h-[381px] object-cover rounded-3xl transition-all group-hover:h-[320px]" />
+    <img
+      src="${program.image || "https://via.placeholder.com/600x381"}"
+      alt="${program.name}"
+      class="w-full h-[381px] object-cover rounded-3xl transition-all duration-100 group-hover:h-[340px]"
+    />
 
-        <div class="flex flex-wrap gap-2 text-xs text-gray-600 my-5 group-hover:hidden transition">
-          ${tagsHTML}
-        </div>
+    <div class="flex flex-wrap gap-2 text-xs text-gray-600 my-5 transition-opacity duration-100 group-hover:opacity-0">
+      ${tagsHTML}
+    </div>
 
-        <h6 class="font-semibold text-xl mb-4 ">
-          ${program.name}
-        </h6>
+<div class="group relative pb-16">
+  <h6 class="font-normal text-2xl mb-1 text-dark transition-all duration-100 group-hover:opacity-0">
+    ${program.name}
+  </h6>
+  <div class="absolute  top-[-40px] opacity-0
+              transition-all duration-100 group-hover:opacity-100 ">
+    <p class="text-2xl text-dark font-mormal">
+      ${program.name}
+    </p>
+<p class="text-dark text-[16px] leading-relaxed w-[300px] md:w-[380px]">
+  ${program.content || ""}
+</p>
 
-        <p class="hidden group-hover:block text-gray-600 text-base transition-opacity opacity-0 group-hover:opacity-100">
-          ${program.content || ""}
-        </p>
+  </div>
+</div>
+
 
         <div class="z-[999] bg-[#F0F2F4] absolute bottom-0 right-0 p-2 rounded-tl-[25px]">
           <div class="relative">
@@ -985,7 +997,7 @@
                           prevEl: ".program-swiper-button-prev",
                       },
                       breakpoints: {
-                          640: { slidesPerView: 1.5 },
+                          640: { slidesPerView: 1 },
                           768: { slidesPerView: 2 },
                           1024: { slidesPerView: 3 },
                           1440: { slidesPerView: 3 }, // keep fixed at 3 for all large screens
