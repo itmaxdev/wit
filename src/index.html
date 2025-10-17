@@ -35,7 +35,7 @@
           <a href="membership.html" class="nav-link">Membership</a>
         </div>
         <div class="hidden xl:flex items-center gap-2 flex-shrink-0" id="buttonContainer">
-          <button class="btn-community btn-outline-community whitespace-nowrap">Join Our Community</button>
+          <button class="btn-community btn-outline-community whitespace-nowrap" onclick="scrollToJoinSection()">Join Our Community</button>
         </div>
         <div class="lg:hidden grow text-end">
           <button @click="open = !open" aria-label="Toggle menu">
@@ -925,7 +925,7 @@
 
               data.forEach((program) => {
                   const slide = document.createElement("div");
-                  slide.className = "relative swiper-slide rounded-3xl bg-white p-5 group h-[596px] overflow-hidden";
+                  slide.className = "relative swiper-slide rounded-3xl bg-white p-5 group h-[596px] overflow-hidden flex flex-col";
 
                   let tagsHTML = "";
                   if (program.tags && program.tags.length > 0) {
@@ -938,11 +938,12 @@
                   }
 
                   slide.innerHTML = `
-    <img
-      src="${program.image || "https://via.placeholder.com/600x381"}"
-      alt="${program.name}"
-      class="w-full h-[381px] object-cover rounded-3xl transition-all duration-100 group-hover:h-[340px]"
-    />
+  <img
+    src="${program.image || 'https://via.placeholder.com/600x381'}"
+    alt="${program.name}"
+    class="w-full h-[381px] object-cover rounded-3xl transform transition-transform duration-100 ease-in-out group-hover:scale-90"
+  />
+
 
     <div class="flex flex-wrap gap-2 text-xs text-gray-600 my-5 transition-opacity duration-100 group-hover:opacity-0">
       ${tagsHTML}
